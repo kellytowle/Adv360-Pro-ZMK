@@ -65,23 +65,38 @@
         &none &none        &none        &none        &none                                       &none &none &none &none      &bl BL_TOG &rgb_ug RGB_TOG                                     &bl BL_INC   &bl BL_DEC   &none &none &none
       >;
     };
-    extra1 { 
-      display-name = "Red";    
+    extra1 {
+      display-name = "Red";
+      // |  0  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  A  |  B  |  C  |  D  |  E  |  F  |  G  |  H  |
+      // -------------------------------------------------------------------------------------------------------------
+      // |     |     |     |     |     |     |     | --------------------- |     |     |     |     |     |     |     |
+      // |     |     |  +  |     |  {  |  ~  |     | --------------------- |     |  "  |  }  |     |  _  |     |     |
+      // |     |     |  =  |  (  |  [  |  `  |     |     |     |     |     |     |  '  |  ]  |  )  |  -  |  |  |     |
+      // |     |     |     |     |  <  |     | --------- |     |     | --------- |     |  >  |     |     |  \  |     |
+      // |     |     |     | Prev|Next | --- |     |     |     |     |     |Pause| --- |Vol.-|Vol.+|Mute |     |     |
+      // -------------------------------------------------------------------------------------------------------------
+      // |  0  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  A  |  B  |  C  |  D  |  E  |  F  |  G  |  H  |
+      bindings = <
+        &none  &none &none      &none       &none       &none      &none                         &none    &none   &none         &none         &none      &none    &none
+        &none  &none &kp PLUS   &none       &kp LBRC    &kp TILDE  &none                         &none    &kp DQT &kp RBRC      &none         &kp UNDER  &none    &none
+        &none  &none &kp EQUAL  &kp LPAR    &kp LBKT    &kp GRAVE  &none &none &none &none &none &none    &kp SQT &kp RBKT      &kp RPAR      &kp MINUS  &kp PIPE &none
+        &none  &none &none      &none       &kp LT      &none                  &none &none                &none   &kp GT        &none         &none      &kp NUBS &none
+        &none  &none &none      &kp C_PREV  &kp C_NEXT             &none &none &none &none &none &kp C_PP         &kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE &none    &none
+      >;
+    };
+
+    extra2 {
+      display-name = "Purple";
       status = "reserved";
     };
 
-    extra2 { 
-      display-name = "Purple";    
+    extra3 {
+      display-name = "Cyan";
       status = "reserved";
     };
 
-    extra3 { 
-      display-name = "Cyan";    
-      status = "reserved";
-    };
-
-    extra4 { 
-      display-name = "Yellow";    
+    extra4 {
+      display-name = "Yellow";
       status = "reserved";
     };
   };
