@@ -27,12 +27,21 @@
 
     default_layer {
       display-name = "0 Base";
+      // |  0  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  A  |  B  |  C  |  D  |  E  |  F  |  G  |  H  |
+      // -------------------------------------------------------------------------------------------------------------
+      // |  =  |  1  |  2  |  3  |  4  |  5  | To1 | --------------------- | Mo3 |  6  |  7  |  8  |  9  |  0  |  -  |
+      // | TAB |  Q  |  W  |  E  |  R  |  T  |     | --------------------- |     |  Y  |  U  |  I  |  O  |  P  |  \  |
+      // | ESC |  A  |  S  |  D  |  F  |  G  |     | LGui| LALT|RCTRL|RGui |     |  H  |  J  |  K  |  L  |  ;  |  '  |
+      // |LShft|  Z  |  X  |  C  |  V  |  B  | --------- | Mo4 |ACGui| --------- |  N  |  M  |  ,  |  .  |  /  |RShft|
+      // | Mo2 |  `  | Cap | Left|Right| --- | BSPC| DEL |Hyper|SCGui|Enter|Space| --- | Down| Up  |  [  |  ]  | Mo5 |
+      // -------------------------------------------------------------------------------------------------------------
+      // |  0  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  A  |  B  |  C  |  D  |  E  |  F  |  G  |  H  |
       bindings = <
-        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                           &mo 3 &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &kp MINUS
-        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                            &none &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
-        &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none           &kp LGUI &kp LCTRL &kp RALT  &kp RGUI           &none &kp H  &kp J  &kp K     &kp L    &kp SEMI &kp SQT
-        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                            &mo 4 &kp RA(RC(RGUI))                           &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT     &kp BSPC &kp DEL &kp LS(LC(LA(LGUI)))  &kp RS(RC(RGUI)) &kp ENTER &kp SPACE     &kp UP &kp DOWN  &kp LBKT &kp RBKT &mo 5
+        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                                                  &mo 3 &kp N6 &kp N7   &kp N8    &kp N9   &kp N0   &kp MINUS
+        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                                                   &none &kp Y  &kp U    &kp I     &kp O    &kp P    &kp BSLH
+        &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none             &kp LGUI  &kp LALT              &kp RCTRL         &kp RGUI            &none &kp H  &kp J    &kp K     &kp L    &kp SEMI &kp SQT
+        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                              &mo 4                 &kp RA(RC(RGUI))                            &kp N  &kp M    &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
+        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                 &kp BSPC  &kp DEL   &kp LS(LC(LA(LGUI)))  &kp RS(RC(RGUI))  &kp ENTER &kp SPACE              &kp UP   &kp DOWN  &kp LBKT &kp RBKT &mo 5
       >;
     };
     keypad {
@@ -87,7 +96,24 @@
 
     extra2 {
       display-name = "5 Purple";
-      status = "reserved";
+      // This layer is the same as the base, however it inverts the ALT & CTRL keys to allow for combinations with the
+      // keys from the same thumb cluster, e.g. CTRL+BSPC
+      // |  0  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  A  |  B  |  C  |  D  |  E  |  F  |  G  |  H  |
+      // -------------------------------------------------------------------------------------------------------------
+      // |  =  |  1  |  2  |  3  |  4  |  5  | To1 | --------------------- | Mo3 |  6  |  7  |  8  |  9  |  0  |  -  |
+      // | TAB |  Q  |  W  |  E  |  R  |  T  |     | --------------------- |     |  Y  |  U  |  I  |  O  |  P  |  \  |
+      // | ESC |  A  |  S  |  D  |  F  |  G  |     | LGui|LCTRL|RALT |RGui |     |  H  |  J  |  K  |  L  |  ;  |  '  |
+      // |LShft|  Z  |  X  |  C  |  V  |  B  | --------- | Mo4 |ACGui| --------- |  N  |  M  |  ,  |  .  |  /  |RShft|
+      // | Mo2 |  `  | Cap | Left|Right| --- | BSPC| DEL |Hyper|SCGui|Enter|Space| --- | Down| Up  |  [  |  ]  | Mo5 |
+      // -------------------------------------------------------------------------------------------------------------
+      // |  0  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  A  |  B  |  C  |  D  |  E  |  F  |  G  |  H  |
+      bindings = <
+        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                                                  &mo 3 &kp N6 &kp N7   &kp N8    &kp N9   &kp N0   &kp MINUS
+        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                                                   &none &kp Y  &kp U    &kp I     &kp O    &kp P    &kp BSLH
+        &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none             &kp LGUI  &kp LCTRL             &kp RALT          &kp RGUI            &none &kp H  &kp J    &kp K     &kp L    &kp SEMI &kp SQT
+        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                              &mo 4                 &kp RA(RC(RGUI))                            &kp N  &kp M    &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
+        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                 &kp BSPC  &kp DEL   &kp LS(LC(LA(LGUI)))  &kp RS(RC(RGUI))  &kp ENTER &kp SPACE              &kp UP   &kp DOWN  &kp LBKT &kp RBKT &mo 5
+      >;
     };
 
     extra3 {
