@@ -26,7 +26,7 @@
     compatible = "zmk,keymap";
 
     default_layer {
-      display-name = "Base";
+      display-name = "0 Base";
       bindings = <
         &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                           &mo 3 &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &kp MINUS
         &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                            &none &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
@@ -36,7 +36,7 @@
       >;
     };
     keypad {
-      display-name = "Kp";
+      display-name = "1 Kp";
       bindings = <
         &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &trans                                                           &mo 3 &kp N6 &kp KP_NUM &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &kp MINUS
         &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                            &none &kp Y  &kp KP_N7  &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &kp BSLH
@@ -46,7 +46,7 @@
       >;
     };
     fn {
-      display-name = "Fn";
+      display-name = "2 Fn";
       bindings = <
         &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &tog 1                                           &mo 3 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
         &trans &trans &trans &trans &trans &trans  &none                                           &none &trans &trans &trans &trans  &trans  &trans
@@ -56,7 +56,7 @@
       >;
     };
     mod {
-      display-name = "Mod";
+      display-name = "3 Mod";
       bindings = <
         &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none                                                                     &trans                 &none        &none        &none        &none &none &none
         &none &none        &none        &none        &none        &none        &bootloader                                                               &bootloader            &none        &none        &none        &none &none &none
@@ -66,7 +66,7 @@
       >;
     };
     extra1 {
-      display-name = "Red";
+      display-name = "4 Red";
       // |  0  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  A  |  B  |  C  |  D  |  E  |  F  |  G  |  H  |
       // -------------------------------------------------------------------------------------------------------------
       // |     |     |     |     |     |     |     | --------------------- |     |     |     |     |     |     |     |
@@ -86,17 +86,17 @@
     };
 
     extra2 {
-      display-name = "Purple";
+      display-name = "5 Purple";
       status = "reserved";
     };
 
     extra3 {
-      display-name = "Cyan";
+      display-name = "6 Cyan";
       status = "reserved";
     };
 
     extra4 {
-      display-name = "Yellow";
+      display-name = "7 Yellow";
       status = "reserved";
     };
   };
