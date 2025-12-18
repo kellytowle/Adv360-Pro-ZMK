@@ -6,6 +6,13 @@
 #include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/pointing.h>
 
+#define DEFAULT 0
+#define FLIP    1
+#define FN      2
+#define SYM     3
+#define KPD     4
+#define MOD     5
+
 / {
     behaviors {
       #include "macros.dtsi"
@@ -26,26 +33,27 @@
     compatible = "zmk,keymap";
 
     default_layer {
-      display-name = "0 Base";
+      display-name = "Base";
       // |  0  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  A  |  B  |  C  |  D  |  E  |  F  |  G  |  H  |
       // -------------------------------------------------------------------------------------------------------------
-      // |  =  |  1  |  2  |  3  |  4  |  5  | To1 | --------------------- | Mo3 |  6  |  7  |  8  |  9  |  0  |  -  | 14
+      // |  =  |  1  |  2  |  3  |  4  |  5  | To1 | --------------------- | MOD |  6  |  7  |  8  |  9  |  0  |  -  | 14
       // | TAB |  Q  |  W  |  E  |  R  |  T  |     | --------------------- |     |  Y  |  U  |  I  |  O  |  P  |  \  | 14
       // | ESC |  A  |  S  |  D  |  F  |  G  |     | LGui| LALT|RCTRL|RGui |     |  H  |  J  |  K  |  L  |  ;  |  '  | 18
       // |LShft|  Z  |  X  |  C  |  V  |  B  | --------- | Mo4 |ACGui| --------- |  N  |  M  |  ,  |  .  |  /  |RShft| 14
-      // | Mo2 |  `  | Cap | Left|Right| --- | BSPC| DEL |Hyper|SCGui|Enter|Space| --- | Down| Up  |  [  |  ]  | Mo5 | 16
+      // | FN  |  `  | Cap | Left|Right| --- | BSPC| DEL |Hyper|SCGui|Enter|Space| --- | Down| Up  |  [  |  ]  | Mo5 | 16
       // -------------------------------------------------------------------------------------------------------------
       // |  0  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  A  |  B  |  C  |  D  |  E  |  F  |  G  |  H  |
       bindings = <
-        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                                                  &mo 3 &kp N6 &kp N7   &kp N8    &kp N9   &kp N0   &kp MINUS
+        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                                                  &mo MOD &kp N6 &kp N7   &kp N8    &kp N9   &kp N0   &kp MINUS
         &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                                                   &none &kp Y  &kp U    &kp I     &kp O    &kp P    &kp BSLH
         &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none             &kp LGUI  &kp LALT              &kp RCTRL         &kp RGUI            &none &kp H  &kp J    &kp K     &kp L    &kp SEMI &kp SQT
-        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                              &mo 4                 &kp RA(RC(RGUI))                            &kp N  &kp M    &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                 &kp BSPC  &kp DEL   &kp LS(LC(LA(LGUI)))  &kp RS(RC(RGUI))  &kp ENTER &kp SPACE              &kp UP   &kp DOWN  &kp LBKT &kp RBKT &mo 1
+        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                              &mo SYM               &kp RA(RC(RGUI))                            &kp N  &kp M    &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
+        &mo FN    &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                 &kp BSPC  &kp DEL   &kp LS(LC(LA(LGUI)))  &kp RS(RC(RGUI))  &kp ENTER &kp SPACE              &kp UP   &kp DOWN  &kp LBKT &kp RBKT &mo FLIP
       >;
     };
+
     flip {
-      display-name = "1 Flip Modifiers";
+      display-name = "Flip Modifiers";
       // This layer inverts the ALT & CTRL keys from the Base layer to allow for combinations within the
       // same thumb cluster, e.g. ALT+BSPC, CTRL+ENTER, etc. - Kelly, Wed Dec 17 2025
       bindings = <
@@ -58,17 +66,17 @@
     };
 
     fn {
-      display-name = "2 Fn";
+      display-name = "Fn";
       bindings = <
-        &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &tog 1                                           &mo 3 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
+        &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &tog 1                                           &mo MOD &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
         &trans &trans &trans &trans &trans &trans  &none                                           &none &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &trans  &none        &trans &trans &trans &trans        &none &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &trans                      &trans &trans                     &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans               &kp SPACE &trans &trans &trans &trans &trans              &trans &trans &trans  &trans  &trans
       >;
     };
     mod {
-      display-name = "3 Mod";
+      display-name = "Mod";
       bindings = <
         &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none                                                                     &trans                 &none        &none        &none        &none &none &none
         &none &none        &none        &none        &none        &none        &bootloader                                                               &bootloader            &none        &none        &none        &none &none &none
@@ -77,8 +85,8 @@
         &none &none        &none        &none        &none                                       &none &none &none &none      &bl BL_TOG &rgb_ug RGB_TOG                                     &bl BL_INC   &bl BL_DEC   &none &none &none
       >;
     };
-    extra1 {
-      display-name = "4 Red";
+    sym {
+      display-name = "Symbols";
       // |  0  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  A  |  B  |  C  |  D  |  E  |  F  |  G  |  H  |
       // -------------------------------------------------------------------------------------------------------------
       // |     |     |     |     |     |     |     | --------------------- |     |     |     |     |     |     |     | 14
@@ -98,34 +106,17 @@
     };
 
     extra2 {
-      display-name = "5 Purple";
-      // This layer is the same as the base, however it inverts the ALT & CTRL keys to allow for combinations with the
-      // keys from the same thumb cluster, e.g. CTRL+BSPC
-      // |  0  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  A  |  B  |  C  |  D  |  E  |  F  |  G  |  H  |
-      // -------------------------------------------------------------------------------------------------------------
-      // |  =  |  1  |  2  |  3  |  4  |  5  | To1 | --------------------- | Mo3 |  6  |  7  |  8  |  9  |  0  |  -  | 14
-      // | TAB |  Q  |  W  |  E  |  R  |  T  |     | --------------------- |     |  Y  |  U  |  I  |  O  |  P  |  \  | 14
-      // | ESC |  A  |  S  |  D  |  F  |  G  |     | LGui|LCTRL|RALT |RGui |     |  H  |  J  |  K  |  L  |  ;  |  '  | 18
-      // |LShft|  Z  |  X  |  C  |  V  |  B  | --------- | Mo4 |ACGui| --------- |  N  |  M  |  ,  |  .  |  /  |RShft| 14
-      // | Mo2 |  `  | Cap | Left|Right| --- | BSPC| DEL |Hyper|SCGui|Enter|Space| --- | Down| Up  |  [  |  ]  | Mo5 | 16
-      // -------------------------------------------------------------------------------------------------------------
-      // |  0  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  A  |  B  |  C  |  D  |  E  |  F  |  G  |  H  |
-      bindings = <
-        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                                                  &mo 3 &kp N6 &kp N7   &kp N8    &kp N9   &kp N0   &kp MINUS
-        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                                                   &none &kp Y  &kp U    &kp I     &kp O    &kp P    &kp BSLH
-        &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none             &kp LGUI  &kp LCTRL             &kp RALT          &kp RGUI            &none &kp H  &kp J    &kp K     &kp L    &kp SEMI &kp SQT
-        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                              &mo 4                 &kp RA(RC(RGUI))                            &kp N  &kp M    &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                 &kp BSPC  &kp DEL   &kp LS(LC(LA(LGUI)))  &kp RS(RC(RGUI))  &kp ENTER &kp SPACE              &kp UP   &kp DOWN  &kp LBKT &kp RBKT &mo 5
-      >;
+      display-name = "Purple";
+      status = "reserved";
     };
 
     extra3 {
-      display-name = "6 Cyan";
+      display-name = "Cyan";
       status = "reserved";
     };
 
     extra4 {
-      display-name = "7 Yellow";
+      display-name = "Yellow";
       status = "reserved";
     };
   };
