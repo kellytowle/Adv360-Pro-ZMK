@@ -38,13 +38,21 @@
     compatible = "zmk,behavior-macro";
     label = "markdown_tag";
     #binding-cells = <0>;
-    bindings = <&kp MINUS>, <&kp SPACE>, <&kp LBKT>, <&kp RBKT>, <&kp SPACE>, <&kp LEFT>, <&kp LEFT>;
+    wait-ms = <1>;
+    bindings
+        = <&macro_tap_time 5>
+        , <&kp MINUS &kp SPACE &kp LBKT &kp RBKT &kp SPACE &kp LEFT &kp LEFT>
+        ;
   };
   markdown_checklist_item: markdown_checklist_item {
     compatible = "zmk,behavior-macro";
     label = "markdown_checklist_item";
     #binding-cells = <0>;
-    bindings = <&kp MINUS>, <&kp SPACE>, <&kp LBKT>, <&kp SPACE>, <&kp RBKT>, <&kp SPACE>;
+      wait-ms = <1>;
+      bindings
+        = <&macro_tap_time 5>
+        , <&kp MINUS &kp SPACE &kp LBKT &kp SPACE &kp RBKT &kp SPACE>
+        ;
   };
 
   Win_Cut: Windows_Cut {
