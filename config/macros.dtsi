@@ -55,6 +55,17 @@
         ;
   };
 
+  markdown_checked_list_item: markdown_checked_list_item {
+    compatible = "zmk,behavior-macro";
+    label = "markdown_checked_list_item";
+    #binding-cells = <0>;
+      wait-ms = <1>;
+      bindings
+        = <&macro_tap_time 5>
+        , <&kp MINUS &kp SPACE &kp LBKT &kp X &kp RBKT &kp SPACE>
+        ;
+  };
+
   Win_Cut: Windows_Cut {
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;

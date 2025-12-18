@@ -96,18 +96,18 @@
       // |  0  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  A  |  B  |  C  |  D  |  E  |  F  |  G  |  H  |
       // -------------------------------------------------------------------------------------------------------------
       // |     |     |     |     |     |     |     | --------------------- |     |     |     |     |     |     |     | 14
-      // |     |     |  1  |  2  |  3  |  4  |  5  | --------------------- |  6  |  7  |  8  |  9  |  0  |  |  |     | 14
-      // |     |     |  =  |  [  |  (  |  `  |     |     |     |     |     |     |  '  |  )  |  ]  |  -  |  \  |     | 18
+      // |     |  1  |  2  |  3  |  4  |  5  |     | --------------------- |     |  6  |  7  |  8  |  9  |  0  |     | 14
+      // |     |     |  =  |  [  |  (  |  `  |     |     |     |- [|]|     |     |  '  |  )  |  ]  |  -  |  \  |     | 18
       // |LShft|     |  !  |  <  |  ,  |RC(`)| --------- |     |- [ ]| --------- |     |  .  |  >  |  ?  |     |RShft| 14
-      // |     |     |     | Prev|Next | --- |     |     |     |     |     |Pause| --- |Vol.-|Vol.+|Mute |     |     | 16
+      // |     |     |     | Prev|Next | --- |     |     |     |- [x]|     |Pause| --- |Vol.-|Vol.+|Mute |     |     | 16
       // -------------------------------------------------------------------------------------------------------------
       // |  0  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  A  |  B  |  C  |  D  |  E  |  F  |  G  |  H  |
       bindings = <
-        &none     &none &none      &none       &none       &none      &none                                               &none    &none   &none         &none         &none      &none    &none
-        &none     &none &kp PLUS   &kp LBRC    &kp AT      &kp TILDE  &none                                               &none    &kp DQT &kp HASH      &kp RBRC      &kp STAR   &kp PIPE &none
-        &none     &none &kp EQUAL  &kp LBKT    &kp LPAR    &kp GRAVE  &none &none &none &markdown_tag                     &none   &none    &kp SQT &kp RPAR      &kp RBKT      &kp MINUS  &kp NUBS &none
-        &kp LSHFT &none &kp EXCL   &kp LT      &kp COMMA   &kp RC(GRAVE)          &none &markdown_checklist_item                   &none   &kp DOT       &kp GT        &kp UNDER  &none    &kp RSHFT
-        &none     &none &none      &kp C_PREV  &kp C_NEXT             &none &none &none &none &none &kp C_PP                               &kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE &none    &none
+        &none     &none &none      &none       &none       &none      &none                                                               &none    &none   &none         &none         &none      &none    &none
+        &none     &none &kp PLUS   &kp LBRC    &kp AT      &kp TILDE  &none                                                               &none    &kp DQT &kp HASH      &kp RBRC      &kp STAR   &kp PIPE &none
+        &none     &none &kp EQUAL  &kp LBKT    &kp LPAR    &kp GRAVE  &none       &none &none &markdown_tag               &none           &none    &kp SQT &kp RPAR      &kp RBKT      &kp MINUS  &kp NUBS &none
+        &kp LSHFT &none &kp EXCL   &kp LT      &kp COMMA   &kp RC(GRAVE)                &none &markdown_checklist_item                             &none   &kp DOT       &kp GT        &kp UNDER  &none    &kp RSHFT
+        &none     &none &none      &kp C_PREV  &kp C_NEXT                   &none &none &none &markdown_checked_list_item &none &kp C_PP                   &kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE &none    &none
       >;
     };
 
