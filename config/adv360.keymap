@@ -29,11 +29,11 @@
       display-name = "0 Base";
       // |  0  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  A  |  B  |  C  |  D  |  E  |  F  |  G  |  H  |
       // -------------------------------------------------------------------------------------------------------------
-      // |  =  |  1  |  2  |  3  |  4  |  5  | To1 | --------------------- | Mo3 |  6  |  7  |  8  |  9  |  0  |  -  |
-      // | TAB |  Q  |  W  |  E  |  R  |  T  |     | --------------------- |     |  Y  |  U  |  I  |  O  |  P  |  \  |
-      // | ESC |  A  |  S  |  D  |  F  |  G  |     | LGui| LALT|RCTRL|RGui |     |  H  |  J  |  K  |  L  |  ;  |  '  |
-      // |LShft|  Z  |  X  |  C  |  V  |  B  | --------- | Mo4 |ACGui| --------- |  N  |  M  |  ,  |  .  |  /  |RShft|
-      // | Mo2 |  `  | Cap | Left|Right| --- | BSPC| DEL |Hyper|SCGui|Enter|Space| --- | Down| Up  |  [  |  ]  | Mo5 |
+      // |  =  |  1  |  2  |  3  |  4  |  5  | To1 | --------------------- | Mo3 |  6  |  7  |  8  |  9  |  0  |  -  | 14
+      // | TAB |  Q  |  W  |  E  |  R  |  T  |     | --------------------- |     |  Y  |  U  |  I  |  O  |  P  |  \  | 14
+      // | ESC |  A  |  S  |  D  |  F  |  G  |     | LGui| LALT|RCTRL|RGui |     |  H  |  J  |  K  |  L  |  ;  |  '  | 18
+      // |LShft|  Z  |  X  |  C  |  V  |  B  | --------- | Mo4 |ACGui| --------- |  N  |  M  |  ,  |  .  |  /  |RShft| 14
+      // | Mo2 |  `  | Cap | Left|Right| --- | BSPC| DEL |Hyper|SCGui|Enter|Space| --- | Down| Up  |  [  |  ]  | Mo5 | 16
       // -------------------------------------------------------------------------------------------------------------
       // |  0  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  A  |  B  |  C  |  D  |  E  |  F  |  G  |  H  |
       bindings = <
@@ -41,19 +41,22 @@
         &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                                                   &none &kp Y  &kp U    &kp I     &kp O    &kp P    &kp BSLH
         &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none             &kp LGUI  &kp LALT              &kp RCTRL         &kp RGUI            &none &kp H  &kp J    &kp K     &kp L    &kp SEMI &kp SQT
         &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                              &mo 4                 &kp RA(RC(RGUI))                            &kp N  &kp M    &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                 &kp BSPC  &kp DEL   &kp LS(LC(LA(LGUI)))  &kp RS(RC(RGUI))  &kp ENTER &kp SPACE              &kp UP   &kp DOWN  &kp LBKT &kp RBKT &mo 5
+        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                 &kp BSPC  &kp DEL   &kp LS(LC(LA(LGUI)))  &kp RS(RC(RGUI))  &kp ENTER &kp SPACE              &kp UP   &kp DOWN  &kp LBKT &kp RBKT &mo 1
       >;
     };
-    keypad {
-      display-name = "1 Kp";
+    flip {
+      display-name = "1 Flip Modifiers";
+      // This layer inverts the ALT & CTRL keys from the Base layer to allow for combinations within the
+      // same thumb cluster, e.g. ALT+BSPC, CTRL+ENTER, etc. - Kelly, Wed Dec 17 2025
       bindings = <
-        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &trans                                                           &mo 3 &kp N6 &kp KP_NUM &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &kp MINUS
-        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                            &none &kp Y  &kp KP_N7  &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &kp BSLH
-        &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none           &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL           &none &kp H  &kp KP_N4  &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &kp SQT
-        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                            &kp HOME &kp PG_UP                           &kp N  &kp KP_N1  &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &kp RSHFT
-        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp BSPC &kp DEL   &kp END  &kp PG_DN &kp ENTER &kp KP_N0              &kp UP     &kp DOWN     &kp KP_DOT    &kp RBKT        &mo 2
+        &trans &trans &trans &trans &trans &trans  &trans                                                     &trans &trans &trans &trans &trans &trans &trans
+        &trans &trans &trans &trans &trans &trans  &trans                                                     &trans &trans &trans &trans &trans &trans &trans
+        &trans &trans &trans &trans &trans &trans  &trans          &trans   &kp LCTRL &kp RALT  &trans        &trans &trans &trans &trans &trans &trans &trans
+        &trans &trans &trans &trans &trans &trans                           &trans    &trans                         &trans &trans &trans &trans &trans &trans
+        &trans &trans &trans &trans &trans                 &trans  &trans   &trans    &trans    &trans &trans               &trans &trans &trans &trans &trans
       >;
     };
+
     fn {
       display-name = "2 Fn";
       bindings = <
