@@ -9,9 +9,8 @@
 #define DEFAULT 0
 #define FLIP    1
 #define FN      2
-#define SYM     3
-#define KPD     4
-#define MOD     5
+#define MOD     3
+#define SYM     4
 
 / {
     behaviors {
@@ -32,6 +31,7 @@
   keymap {
     compatible = "zmk,keymap";
 
+    // 0
     default_layer {
       display-name = "Base";
       // |  0  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  A  |  B  |  C  |  D  |  E  |  F  |  G  |  H  |
@@ -52,6 +52,7 @@
       >;
     };
 
+    // 1
     flip {
       display-name = "Flip Modifiers";
       // This layer inverts the ALT & CTRL keys from the Base layer to allow for combinations within the
@@ -65,6 +66,7 @@
       >;
     };
 
+    // 2
     fn {
       display-name = "Fn";
       bindings = <
@@ -75,6 +77,8 @@
         &trans &trans &trans &trans &trans               &kp SPACE &trans &trans &trans &trans &trans              &trans &trans &trans  &trans  &trans
       >;
     };
+
+    // 3
     mod {
       display-name = "Mod";
       bindings = <
@@ -85,6 +89,8 @@
         &none &none        &none        &none        &none                                       &none &none &none &none      &bl BL_TOG &rgb_ug RGB_TOG                                     &bl BL_INC   &bl BL_DEC   &none &none &none
       >;
     };
+
+    // 4
     sym {
       display-name = "Symbols";
       // |  0  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  A  |  B  |  C  |  D  |  E  |  F  |  G  |  H  |
