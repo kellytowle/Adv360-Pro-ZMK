@@ -32,7 +32,19 @@
     compatible = "zmk,behavior-macro";
     label = "macro_kinesis";
     #binding-cells = <0>;
-    bindings = <&kp K>, <&kp I>, <&kp N>, <&kp E>, <&kp S>, <&kp I>, <&kp S>;
+    bindings = <&kp LS(K)>, <&kp I>, <&kp N>, <&kp E>, <&kp S>, <&kp I>, <&kp S>;
+  };
+  markdown_tag: markdown_tag {
+    compatible = "zmk,behavior-macro";
+    label = "markdown_tag";
+    #binding-cells = <0>;
+    bindings = <&kp MINUS>, <&kp SPACE>, <&kp LBKT>, <&kp RBKT>, <&kp SPACE>, <&kp LEFT>, <&kp LEFT>;
+  };
+  markdown_checklist_item: markdown_checklist_item {
+      compatible = "zmk,behavior-macro";
+      label = "markdown_checklist_item";
+      #binding-cells = <0>;
+      bindings = <&kp MINUS>, <&kp SPACE>, <&kp LBKT>, <&kp SPACE>, <&kp RBKT>, <&kp SPACE>;
   };
 
   Win_Cut: Windows_Cut {
@@ -137,7 +149,7 @@
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings = <&kp LC(UP_ARROW)>;
-      display-name = "Mac Show All Windoes";
+      display-name = "Mac Show All Windows";
   };
 
   Mac_Snip_Tool: Mac_Snip {
