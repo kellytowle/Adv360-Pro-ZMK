@@ -34,9 +34,9 @@
     #binding-cells = <0>;
     bindings = <&kp LS(K)>, <&kp I>, <&kp N>, <&kp E>, <&kp S>, <&kp I>, <&kp S>;
   };
-  markdown_tag: markdown_tag {
+  md_tag: md_tag {
     compatible = "zmk,behavior-macro";
-    label = "markdown_tag";
+    label = "md_tag";
     #binding-cells = <0>;
     wait-ms = <1>;
     bindings
@@ -44,9 +44,9 @@
         , <&kp MINUS &kp SPACE &kp LBKT &kp RBKT &kp SPACE &kp LEFT &kp LEFT>
         ;
   };
-  markdown_checklist_item: markdown_checklist_item {
+  md_checklist_item: md_checklist_item {
     compatible = "zmk,behavior-macro";
-    label = "markdown_checklist_item";
+    label = "md_checklist_item";
     #binding-cells = <0>;
       wait-ms = <1>;
       bindings
@@ -55,9 +55,9 @@
         ;
   };
 
-  markdown_checked_list_item: markdown_checked_list_item {
+  md_checked_list_item: md_checked_list_item {
     compatible = "zmk,behavior-macro";
-    label = "markdown_checked_list_item";
+    label = "md_checked_list_item";
     #binding-cells = <0>;
       wait-ms = <1>;
       bindings
