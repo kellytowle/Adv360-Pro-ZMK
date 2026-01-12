@@ -7,10 +7,9 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #define DEFAULT 0
-#define FLIP    1
-#define FN      2
-#define MOD     3
-#define SYM     4
+#define FN      1
+#define MOD     2
+#define SYM     3
 
 / {
     behaviors {
@@ -78,25 +77,11 @@
         &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                                                   &none &kp Y  &kp U    &kp I     &kp O    &kp P    &kp BSLH
         &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none             &kp LGUI  &td_alt               &td_ctrl          &kp RGUI            &none &kp H  &kp J    &kp K     &kp L    &kp SEMI &kp SQT
         &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                              &mo SYM               &kp RA(RC(RGUI))                            &kp N  &kp M    &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-        &mo FN    &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                 &kp BSPC  &kp DEL   &kp LS(LC(LA(LGUI)))  &kp RS(RC(RGUI))  &kp ENTER &kp SPACE              &kp UP   &kp DOWN  &kp LBKT &kp RBKT &mo FLIP
+        &mo FN    &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                 &kp BSPC  &kp DEL   &kp LS(LC(LA(LGUI)))  &kp RS(RC(RGUI))  &kp ENTER &kp SPACE              &kp UP   &kp DOWN  &kp LBKT &kp RBKT &mo FN
       >;
     };
 
     // 1 - White
-    flip {
-      display-name = "Flip Modifiers";
-      // This layer inverts the ALT & CTRL keys from the Base layer to allow for combinations within the
-      // same thumb cluster, e.g. ALT+BSPC, CTRL+ENTER, etc. - Kelly, Wed Dec 17 2025
-      bindings = <
-        &trans &trans &trans &trans &trans &trans  &trans                                                     &trans &trans &trans &trans &trans &trans &trans
-        &trans &trans &trans &trans &trans &trans  &trans                                                     &trans &trans &trans &trans &trans &trans &trans
-        &trans &trans &trans &trans &trans &trans  &trans          &trans   &kp LCTRL &kp RALT  &trans        &trans &trans &trans &trans &trans &trans &trans
-        &trans &trans &trans &trans &trans &trans                           &trans    &trans                         &trans &trans &trans &trans &trans &trans
-        &trans &trans &trans &trans &trans                 &trans  &trans   &trans    &trans    &trans &trans               &trans &trans &trans &trans &trans
-      >;
-    };
-
-    // 2 - Blue
     fn {
       display-name = "Fn";
       bindings = <
@@ -108,7 +93,7 @@
       >;
     };
 
-    // 3 - Green
+    // 2 - Blue
     mod {
       display-name = "Mod";
       bindings = <
@@ -120,7 +105,7 @@
       >;
     };
 
-    // 4 - Red
+    // 3 - Green
     sym {
       display-name = "Symbols";
       // |  0  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  A  |  B  |  C  |  D  |  E  |  F  |  G  |  H  |
@@ -139,6 +124,12 @@
         &kp LSHFT &none   &kp EXCL   &kp LT      &kp COMMA   &kp RC(GRAVE)                &none &md_checklist_item                          &none   &kp DOT       &kp GT        &kp UNDER  &none    &kp RSHFT
         &none     &none   &none      &kp C_PREV  &kp C_NEXT                   &none &none &none &md_checked_list_item &none &kp SPACE               &kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE &none    &none
       >;
+    };
+
+    // 4 - Red
+    extra1 {
+      display-name = "Red";
+      status = "reserved";
     };
 
     // 5 - Purple
