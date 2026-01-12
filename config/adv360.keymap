@@ -27,6 +27,7 @@
           bindings = <&kp>, <&kp>;
       };
 
+      // Hold as normal, tap for sticky key
       htps: hold_tap_press_sticky {
           compatible = "zmk,behavior-hold-tap";
           label = "HOLD_TAP_PRESS_STICKY";
@@ -37,7 +38,8 @@
           bindings = <&kp>, <&sk>;
       };
 
-      td_alt: tap_dance_alt {
+      // Hold LALT as normal, single-tap for sticky key, double-tap for toggle
+      td_alt: td_alt {
           compatible = "zmk,behavior-tap-dance";
           label = "TAP_DANCE_ALT";
           #binding-cells = <0>;
@@ -45,6 +47,7 @@
           bindings = <&htps LALT LALT>, <&kt LALT>;
       };
 
+      // Hold RCTRL as normal, single-tap for sticky key, double-tap for toggle
       td_ctrl: td_ctrl {
           compatible = "zmk,behavior-tap-dance";
           label = "TAP_DANCE_CTRL";
