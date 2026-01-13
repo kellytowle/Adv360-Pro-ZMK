@@ -11,6 +11,8 @@
 #define MOD     2
 #define SYM     3
 
+#define TAP_DANCE_MS  200
+
 / {
     behaviors {
       #include "macros.dtsi"
@@ -42,7 +44,7 @@
           compatible = "zmk,behavior-tap-dance";
           label = "TAP_DANCE_ALT";
           #binding-cells = <0>;
-          tapping-term-ms = <150>;
+          tapping-term-ms = <TAP_DANCE_MS>;
           bindings = <&htps LALT LALT>, <&kt LALT>;
       };
 
@@ -51,7 +53,7 @@
           compatible = "zmk,behavior-tap-dance";
           label = "TAP_DANCE_CTRL";
           #binding-cells = <0>;
-          tapping-term-ms = <150>;
+          tapping-term-ms = <TAP_DANCE_MS>;
           bindings = <&htps RCTRL RCTRL>, <&kt RCTRL>;
       };
 
