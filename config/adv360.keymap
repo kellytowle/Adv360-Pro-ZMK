@@ -31,8 +31,7 @@
           compatible = "zmk,behavior-hold-tap";
           label = "HOLD_TAP_PRESS_STICKY";
           #binding-cells = <2>;
-          tapping-term-ms = <200>;
-          quick_tap_ms = <175>;
+          tapping-term-ms = <100>;
           flavor = "balanced";
           bindings = <&kp>, <&sk>;
       };
@@ -42,7 +41,7 @@
           compatible = "zmk,behavior-tap-dance";
           label = "TAP_DANCE_ALT";
           #binding-cells = <0>;
-          tapping-term-ms = <200>;
+          tapping-term-ms = <100>;
           bindings = <&htps LALT LALT>, <&kt LALT>;
       };
 
@@ -51,7 +50,7 @@
           compatible = "zmk,behavior-tap-dance";
           label = "TAP_DANCE_CTRL";
           #binding-cells = <0>;
-          tapping-term-ms = <200>;
+          tapping-term-ms = <100>;
           bindings = <&htps RCTRL RCTRL>, <&kt RCTRL>;
       };
 
