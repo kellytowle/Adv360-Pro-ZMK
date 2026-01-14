@@ -57,6 +57,14 @@
           bindings = <&kp RCTRL>, <&sk RCTRL>, <&kt RCTRL>;
       };
 
+      td_sk_to: td_sk_to {
+          compatible = "zmk,behavior-tap-dance";
+          label = "TAP_DANCE_CTRL";
+          #binding-cells = <3>;
+          tapping-term-ms = TAP_DANCE_MS;
+          bindings = <&kp>, <&sk>, <&kt>;
+      };
+
       // Test of tap dance behavior
       td_test: td_test {
           compatible = "zmk,behavior-tap-dance";
