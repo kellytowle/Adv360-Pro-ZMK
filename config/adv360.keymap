@@ -11,7 +11,7 @@
 #define MOD     2
 #define SYM     3
 
-#define TAP_DANCE_MS  200
+#define TAP_DANCE_MS  <100>
 
 / {
     behaviors {
@@ -33,7 +33,7 @@
           compatible = "zmk,behavior-hold-tap";
           label = "HOLD_TAP_PRESS_STICKY";
           #binding-cells = <2>;
-          tapping-term-ms = <200>;
+          tapping-term-ms = TAP_DANCE_MS;
           quick_tap_ms = <175>;
           flavor = "balanced";
           bindings = <&kp>, <&sk>;
@@ -44,8 +44,8 @@
           compatible = "zmk,behavior-tap-dance";
           label = "TAP_DANCE_ALT";
           #binding-cells = <0>;
-          tapping-term-ms = <TAP_DANCE_MS>;
-          bindings = <&htps LALT LALT>, <&kt LALT>;
+          tapping-term-ms = TAP_DANCE_MS;
+          bindings = <&kp LALT>, <&sk LALT>, <&kt LALT>;
       };
 
       // Hold RCTRL as normal, single-tap for sticky key, double-tap for toggle
@@ -53,8 +53,8 @@
           compatible = "zmk,behavior-tap-dance";
           label = "TAP_DANCE_CTRL";
           #binding-cells = <0>;
-          tapping-term-ms = <TAP_DANCE_MS>;
-          bindings = <&htps RCTRL RCTRL>, <&kt RCTRL>;
+          tapping-term-ms = TAP_DANCE_MS;
+          bindings = <&kp RCTRL>, <&sk RCTRL>, <&kt RCTRL>;
       };
 
     };
