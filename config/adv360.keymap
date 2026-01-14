@@ -11,7 +11,7 @@
 #define MOD     2
 #define SYM     3
 
-#define TAP_DANCE_MS  <100>
+#define TAP_DANCE_MS  <150>
 
 / {
     behaviors {
