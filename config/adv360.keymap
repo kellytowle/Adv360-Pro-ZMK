@@ -16,6 +16,7 @@
 / {
     behaviors {
       #include "macros.dtsi"
+      #include "custom_behaviors.dtsi"
       #include "version.dtsi"
 
       hm: homerow_mods {
@@ -37,32 +38,6 @@
           quick_tap_ms = <175>;
           flavor = "balanced";
           bindings = <&kp>, <&sk>;
-      };
-
-      // Hold LALT as normal, single-tap for sticky key, double-tap for toggle
-      td_alt: td_alt {
-          compatible = "zmk,behavior-tap-dance";
-          label = "TAP_DANCE_ALT";
-          #binding-cells = <0>;
-          tapping-term-ms = TAP_DANCE_MS;
-          bindings = <&kp LALT>, <&sk LALT>, <&kt LALT>;
-      };
-
-      // Hold RCTRL as normal, single-tap for sticky key, double-tap for toggle
-      td_ctrl: td_ctrl {
-          compatible = "zmk,behavior-tap-dance";
-          label = "TAP_DANCE_CTRL";
-          #binding-cells = <0>;
-          tapping-term-ms = TAP_DANCE_MS;
-          bindings = <&kp RCTRL>, <&sk RCTRL>, <&kt RCTRL>;
-      };
-
-      td_sk_to: td_sk_to {
-          compatible = "zmk,behavior-tap-dance";
-          label = "TAP_DANCE_CTRL";
-          #binding-cells = <3>;
-          tapping-term-ms = TAP_DANCE_MS;
-          bindings = <&kp>, <&sk>, <&kt>;
       };
 
       // Test of tap dance behavior
