@@ -14,42 +14,21 @@
 #define TAP_DANCE_MS  <200>
 
 / {
-    behaviors {
-      #include "macros.dtsi"
-      #include "custom_behaviors.dtsi"
-      #include "version.dtsi"
+  behaviors {
+    #include "macros.dtsi"
+    #include "custom_behaviors.dtsi"
+    #include "version.dtsi"
 
-      hm: homerow_mods {
-          compatible = "zmk,behavior-hold-tap";
-          label = "HOMEROW_MODS";
-          #binding-cells = <2>;
-          tapping-term-ms = <200>;
-          quick_tap_ms = <175>;
-          flavor = "tap-preferred";
-          bindings = <&kp>, <&kp>;
-      };
-
-      // Hold as normal, tap for sticky key
-      htps: hold_tap_press_sticky {
-          compatible = "zmk,behavior-hold-tap";
-          label = "HOLD_TAP_PRESS_STICKY";
-          #binding-cells = <2>;
-          tapping-term-ms = TAP_DANCE_MS;
-          quick_tap_ms = <175>;
-          flavor = "balanced";
-          bindings = <&kp>, <&sk>;
-      };
-
-      // Test of tap dance behavior
-      td_test: td_test {
-          compatible = "zmk,behavior-tap-dance";
-          label = "TAP_DANCE_TEST";
-          #binding-cells = <0>;
-          tapping-term-ms = TAP_DANCE_MS;
-          bindings = <&kp N1>, <&kp N2>, <&kp N3>;
-      };
-
+    hm: homerow_mods {
+        compatible = "zmk,behavior-hold-tap";
+        label = "HOMEROW_MODS";
+        #binding-cells = <2>;
+        tapping-term-ms = <200>;
+        quick_tap_ms = <175>;
+        flavor = "tap-preferred";
+        bindings = <&kp>, <&kp>;
     };
+  };
 
   keymap {
     compatible = "zmk,keymap";
