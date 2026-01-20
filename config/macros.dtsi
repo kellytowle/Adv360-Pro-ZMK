@@ -72,8 +72,8 @@
     #binding-cells = <0>;
       wait-ms = <1>;
       bindings
-        = <&macro_tap_time 5>
-        , <&kp RCTRL &kp RCTRL &kp PG_UP>
+        = <&macro_tap_time 50>
+        , <&kp RCTRL>, <&kp RCTRL>, <&kp PG_UP>
         ;
   };
 
@@ -83,8 +83,8 @@
     #binding-cells = <0>;
       wait-ms = <1>;
       bindings
-        = <&macro_tap_time 5>
-        , <&kp RCTRL &kp RCTRL &kp PG_DN>
+        = <&macro_tap_time 50>
+        , <&kp RCTRL>, <&kp RCTRL>, <&kp PG_DN>
         ;
   };
 
