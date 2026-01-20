@@ -68,7 +68,7 @@
 
   kvm_next: kvm_next {
     compatible = "zmk,behavior-macro";
-    label = "md_checked_list_item";
+    label = "kvm_next";
     #binding-cells = <0>;
       wait-ms = <1>;
       bindings
@@ -79,7 +79,7 @@
 
   kvm_prev: kvm_prev {
     compatible = "zmk,behavior-macro";
-    label = "md_checked_list_item";
+    label = "kvm_prev";
     #binding-cells = <0>;
       wait-ms = <1>;
       bindings
