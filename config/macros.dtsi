@@ -75,7 +75,7 @@
         = <&macro_tap_time 5>
         , <&kp RCTRL &kp RCTRL &kp PG_UP>
         ;
-  }
+  };
 
   kvm_prev: kvm_prev {
     compatible = "zmk,behavior-macro";
@@ -86,7 +86,7 @@
         = <&macro_tap_time 5>
         , <&kp RCTRL &kp RCTRL &kp PG_DN>
         ;
-  }
+  };
 
   Win_Cut: Windows_Cut {
     compatible = "zmk,behavior-macro";
