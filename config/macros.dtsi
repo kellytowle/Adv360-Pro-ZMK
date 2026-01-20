@@ -66,6 +66,28 @@
         ;
   };
 
+  kvm_next: kvm_next {
+    compatible = "zmk,behavior-macro";
+    label = "md_checked_list_item";
+    #binding-cells = <0>;
+      wait-ms = <1>;
+      bindings
+        = <&macro_tap_time 5>
+        , <&kp RCTRL &kp RCTRL &kp PG_UP>
+        ;
+  }
+
+  kvm_prev: kvm_prev {
+    compatible = "zmk,behavior-macro";
+    label = "md_checked_list_item";
+    #binding-cells = <0>;
+      wait-ms = <1>;
+      bindings
+        = <&macro_tap_time 5>
+        , <&kp RCTRL &kp RCTRL &kp PG_DN>
+        ;
+  }
+
   Win_Cut: Windows_Cut {
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
