@@ -41,7 +41,7 @@
     wait-ms = <1>;
     bindings
         = <&macro_tap_time 5>
-        , <&kp MINUS &kp SPACE &kp LBKT &kp RBKT &kp LEFT>
+        , <&kp MINUS &kp SPACE &macro_brackets>
         ;
   };
   md_checklist_item: md_checklist_item {
