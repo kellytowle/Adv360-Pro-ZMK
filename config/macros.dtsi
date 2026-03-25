@@ -16,15 +16,15 @@
     #binding-cells = <0>;
     bindings = <&kp LBRC>, <&kp RBRC>, <&kp LEFT>;
   };
-  macro_parens: macro_parens {
+  m_pars: m_pars {
     compatible = "zmk,behavior-macro";
-    label = "macro_parens";
+    label = "m_pars";
     #binding-cells = <0>;
     bindings = <&kp LPAR>, <&kp RPAR>, <&kp LEFT>;
   };
-  macro_brackets: macro_brackets {
+  m_bkts: m_bkts {
     compatible = "zmk,behavior-macro";
-    label = "macro_brackets";
+    label = "m_bkts";
     #binding-cells = <0>;
     bindings = <&kp LBKT>, <&kp RBKT>, <&kp LEFT>;
   };
@@ -41,7 +41,7 @@
     wait-ms = <1>;
     bindings
         = <&macro_tap_time 5>
-        , <&kp MINUS &kp SPACE &macro_brackets>
+        , <&kp MINUS &kp SPACE &m_bkts>
         ;
   };
   md_checklist_item: md_checklist_item {

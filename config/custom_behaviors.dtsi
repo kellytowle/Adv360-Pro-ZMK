@@ -27,6 +27,24 @@
       bindings = <&kp>, <&sk>;
   };
 
+  // Single-tap for left bracket, double-tap for left & right
+  td_lbkt: td_lbkt {
+      compatible = "zmk,behavior-tap-dance";
+      label = "TAP_DANCE_LBKT";
+      #binding-cells = <0>;
+      tapping-term-ms = TAP_DANCE_MS;
+      bindings = <&kp LBKT>, <&m_bkts>;
+  };
+
+  // Single-tap for left parenthesis, double-tap for left & right
+  td_lpar: td_lpar {
+      compatible = "zmk,behavior-tap-dance";
+      label = "TAP_DANCE_LPAR";
+      #binding-cells = <0>;
+      tapping-term-ms = TAP_DANCE_MS;
+      bindings = <&kp LPAR>, <&m_pars>;
+  };
+
   // Test of tap dance behavior
   td_test: td_test {
       compatible = "zmk,behavior-tap-dance";
