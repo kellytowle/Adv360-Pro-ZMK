@@ -37,6 +37,16 @@
       bindings = <&kp LBKT>, <&m_bkts>;
   };
 
+  // Single-tap for left bracket, double-tap for left & right
+  td_lbrc: td_lbrc {
+      compatible = "zmk,behavior-tap-dance";
+      label = "TAP_DANCE_LBRC";
+      #binding-cells = <0>;
+      //tapping-term-ms = TAP_DANCE_MS;
+      tapping-term-ms = <185>;
+      bindings = <&kp LBRC>, <&m_brcs>;
+  };
+
   // Single-tap for left parenthesis, double-tap for left & right
   td_lpar: td_lpar {
       compatible = "zmk,behavior-tap-dance";
