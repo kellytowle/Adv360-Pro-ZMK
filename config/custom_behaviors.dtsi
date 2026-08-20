@@ -16,14 +16,22 @@
       bindings = <&kp RCTRL>, <&sk RCTRL>, <&kt RCTRL>;
   };
 
-  // Hold/press as first key, single-tap for second key
-  mod_swp: mod_swp {
-    compatible = "zmk,behavior-hold-tap";
-    label = "MOD_SWP";
-    #binding-cells = <2>;
+  // LALT => RCTRL
+  mod_swp_l: mod_swp_l {
+    compatible = "zmk,behavior-tap-dance";
+    label = "MOD_SWP_L";
+    #binding-cells = <0>;
     tapping-term-ms = TAP_DANCE_MS;
-    flavor = "hold-preferred";
-    bindings = <&kp>, <&kp>;
+    bindings = <&kp LALT>, <&kp RCTRL>;
+  };
+
+  // RCTRL => LALT
+  mod_swp_r: mod_swp_r {
+    compatible = "zmk,behavior-tap-dance";
+    label = "MOD_SWP_R";
+    #binding-cells = <0>;
+    tapping-term-ms = TAP_DANCE_MS;
+    bindings = <&kp RCTRL>, <&kp LALT>;
   };
 
   // Hold as normal, tap for sticky key
