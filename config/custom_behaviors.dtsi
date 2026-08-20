@@ -16,6 +16,16 @@
       bindings = <&kp RCTRL>, <&sk RCTRL>, <&kt RCTRL>;
   };
 
+  // Hold/press as first key, single-tap for second key
+  mod_swp: mod_swp {
+    compatible = "zmk,behavior-hold-tap";
+    label = "MOD_SWP";
+    #binding-cells = <2>;
+    tapping-term-ms = TAP_DANCE_MS;
+    flavor = "balanced";
+    bindings = <&kp>, <&kp>;
+  };
+
   // Hold as normal, tap for sticky key
   htps: hold_tap_press_sticky {
       compatible = "zmk,behavior-hold-tap";
