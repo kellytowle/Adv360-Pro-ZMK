@@ -46,11 +46,11 @@
       // -------------------------------------------------------------------------------------------------------------
       // |  0  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  A  |  B  |  C  |  D  |  E  |  F  |  G  |  H  |
       bindings = <
-        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                                                  &mo MOD &kp N6 &kp N7   &kp N8    &kp N9   &kp N0   &kp MINUS
-        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                                                   &none   &kp Y  &kp U    &kp I     &kp O    &kp P    &kp BSLH
-        &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none             &kp LGUI  &td_alt               &td_ctrl          &kp RGUI            &none   &kp H  &kp J    &kp K     &kp L    &kp SEMI &kp SQT
-        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                              &mo SYM               &kp RA(RC(RGUI))                              &kp N  &kp M    &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-        &mo FN    &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                 &kp BSPC  &kp DEL   &kp LS(LC(LA(LGUI)))  &kp RS(RC(RGUI))  &kp ENTER &kp SPACE                &kp UP   &kp DOWN  &kp LBKT &kp RBKT &mo FN
+        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                                                    &mo MOD &kp N6 &kp N7   &kp N8    &kp N9   &kp N0   &kp MINUS
+        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                                                     &none   &kp Y  &kp U    &kp I     &kp O    &kp P    &kp BSLH
+        &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none             &kp LGUI  &mod_swp LALT RCTRL   &mod_swp RCTRL LALT &kp RGUI            &none   &kp H  &kp J    &kp K     &kp L    &kp SEMI &kp SQT
+        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                              &mo SYM               &kp RA(RC(RGUI))                                &kp N  &kp M    &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
+        &mo FN    &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                 &kp BSPC  &kp DEL   &kp LS(LC(LA(LGUI)))  &kp RS(RC(RGUI))    &kp ENTER &kp SPACE                &kp UP   &kp DOWN  &kp LBKT &kp RBKT &mo FN
       >;
     };
 
