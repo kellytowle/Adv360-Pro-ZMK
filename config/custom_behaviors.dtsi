@@ -22,7 +22,7 @@
     label = "MOD_SWP";
     #binding-cells = <2>;
     tapping-term-ms = TAP_DANCE_MS;
-    flavor = "balanced";
+    flavor = "hold-preferred";
     bindings = <&kp>, <&kp>;
   };
 
